@@ -1,0 +1,29 @@
+{
+  "name": "gh-action-filter-labels",
+  "version": "1.0.0",
+  "description": "Action filters labels",
+  "main": "dist/main.js",
+  "scripts": {
+    "package": "npx ncc build src/main.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denar90/gh-action-filter-labels.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "labels"
+  ],
+  "bugs": {
+    "url": "https://github.com/denar90/gh-action-filter-labels/issues"
+  },
+  "homepage": "https://github.com/denar90/gh-action-filter-labels#readme",
+  "author": "Artem Denysov",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "@zeit/ncc": "^0.22.3"
+  }
+}
