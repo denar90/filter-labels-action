@@ -4,10 +4,10 @@
 
 ```yaml
 - uses: denar90/filter-labels-action@1.0.0
-  id: filterLabels
+  id: filter
   with:
-    repo-token: ${{ secrets.GITHUB_TOKEN }}
-- run: echo ${{ steps.filterLabels.outputs.filteredLabels }}
+    filter: ['need-testing']
+- run: echo ${{ steps.filter.outputs.filteredLabels }}
 ```
 
 # License
