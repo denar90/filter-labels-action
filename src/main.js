@@ -6,7 +6,12 @@ async function run() {
         const filter = core.getInput('filter')
             .split("\n")
 	    .filter(x => x !== "");;
-        const filteredLabels = github.context.payload.pull_request.labels.filter(({ name }) => filter.includes(name));
+        const filteredLabels = github.context.payload.pull_request.labels.reduce((acc, { name }) => {
+	    if (filter.includes(name)) {
+	        acc.push(name);
+	    }
+	    return acc;
+	}, []);
         core.setOutput('filteredLabels', filteredLabels);
     } catch (error) {
         core.error(error);
