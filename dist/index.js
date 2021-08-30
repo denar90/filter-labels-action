@@ -112,7 +112,9 @@ const github = __webpack_require__(469);
 
 async function run() {
     try {
-        const filter = getInput('filter');
+        const filter = core.getInput('filter')
+            .split("\n")
+	        .filter(x => x !== "");;
         const filteredLabels = github.context.payload.pull_request.labels.map(({ name }) => {
             return filter.includes(name);
         });
