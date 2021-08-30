@@ -121,6 +121,7 @@ async function run() {
 	    }
 	    return acc;
 	}, []);
+    	console.log('Filtered Labels:', filteredLabels);
         core.setOutput('filteredLabels', filteredLabels);
     } catch (error) {
         core.error(error);
