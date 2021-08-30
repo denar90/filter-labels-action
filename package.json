@@ -2,7 +2,7 @@
   "name": "gh-action-filter-labels",
   "version": "1.0.0",
   "description": "Action filters labels",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "scripts": {
     "package": "npx ncc build src/main.js -o dist"
   },
