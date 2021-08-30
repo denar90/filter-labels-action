@@ -6,7 +6,9 @@
 - uses: denar90/filter-labels-action@1.0.0
   id: filter
   with:
-    filter: ['need-testing']
+    filter: |
+      'need-testing'
+      'automation'
 - run: echo ${{ steps.filter.outputs.filteredLabels }}
 ```
 
