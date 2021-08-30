@@ -3,7 +3,9 @@ const github = require('@actions/github');
 
 async function run() {
     try {
-        const filter = getInput('filter');
+        const filter = core.getInput('filter')
+            .split("\n")
+	        .filter(x => x !== "");;
         const filteredLabels = github.context.payload.pull_request.labels.map(({ name }) => {
             return filter.includes(name);
         });
